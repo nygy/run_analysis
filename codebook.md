@@ -6,6 +6,7 @@ The run_analysis.R script reads the smart phone sensor data from the test and tr
 
 ## Input data
 Raw data was obtained from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 The row data description is available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 The row data set files used by the script are:
