@@ -1,25 +1,37 @@
-## Samsung Galaxy accelerometer application data analysis
+## Coodbook
 This is a codebook file for the data acquisition and analysis of Samsung Galaxy accelerometer application data.
+ 
+##Background
+The run_analysis.R script reads the smart phone sensor data from the test and train data in their respective sub-folders and produces a simplified data frame with only the standard deviation and mean variables. See details in the README.md.
 
+## Input data
 Raw data was obtained from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The row data description is available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The data sets used in this process were...
-
-  -  /train/X_train.txt
-  -  /train/subject_train.txt
-  -  /train/y_train.txt
-  -  /test/X_test.txt
-  -  /test/subject_test.txt
-  -  /test/y_test.txt
-  -  features.txt
+The row data set files used by the script are:
+-  /train/X_train.txt
+-  /train/subject_train.txt
+-  /train/y_train.txt
+-  /test/X_test.txt
+-  /test/subject_test.txt
+-  /test/y_test.txt
+-  features.txt
   
-The columns of main data, located in the 'X_train.txt' and 'Y-train.txt' files, have been renamed to descriptive labels using the values in
-the 'features.txt' file.
+## Transformations
+The run_analysis.R script accomplish the following steps:
 
-All '/*train.txt' and '/*test.txt' data were combined into a single R data frame.
+* Load all the necessary data sources.
+* Add descriptive activity names.
+* Merges the training and the test sets to create one full data set and labels the data set with descriptive variable names.
+* Subset only the measurements on the mean and standard deviation for each measurement and compute means grouped by person and activity.
+* Write results to the Tidy_dataset.txt file.
 
-The 'subject' files and the 'X' files have been concatenated to append the proper subject to their corresponding accelerometer data.
-
-The values in the activities column in the data set have been modified to descriptive names.
-
-A new aggregated tidy dataset ('tidydata.txt') has been created.
+## Output data
+The resulting variables of the output are:
+- "PersonID" 
+- "ActivityName" 
+- "ActivityID" 
+- "tBodyAcc-mean()-X"
+- "tBodyAcc-mean()-Y" 
+- "tBodyAcc-mean()-Z"
+- ...
